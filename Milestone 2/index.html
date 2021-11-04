@@ -73,6 +73,7 @@
                         </div>
                         <!-- Chat Container -->
                         <div class="col-8 chat-container">
+                            <!-- Nav main -->
                             <nav class="d-flex justify-content-between align-items-center">
                                 <div class="d-flex align-items-center">
                                     <div class="avatar-container d-flex">
@@ -80,7 +81,7 @@
                                     </div>
                                     <div class="lh-1">
                                         <h5 class="ps-2">{{contacts[index].name}}</h5>
-                                        <span class="ps-2">Ultimo accesso oggi</span>
+                                        <span class="ps-2">Ultimo accesso: {{lastMsg()}}</span>
                                     </div>
                                 </div>
                                 <div class="icons pe-2">
@@ -92,7 +93,7 @@
                             <!-- Main container chat -->
                             <div class="main-chat-container">
                                 <div v-for='contact, i in contacts[index].messages'>
-                                    <div class="msgContainer"
+                                    <div class="msgContainer clearfix"
                                         :class="contact.status == 'sent' ? 'msgWhite' : 'msgGreen'">
                                         <div> {{contact.text}}</div>
                                         <div class="msg-date">

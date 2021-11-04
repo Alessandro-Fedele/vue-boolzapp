@@ -276,6 +276,12 @@ new Vue({
                     this.contacts[this.index].messages.push(userMsg);
                 }, 500);
         },
+        lastMsg: function ()
+        {
+            let el = this.contacts[this.index].messages;
+            let res = el.map(({ date }) => date);
+            return res[res.length - 1];
+        },
         // funzione per scollare in automatico all'ultimo messaggio copiata spudoratamente da internet
         scrollToEnd: function ()
         {
