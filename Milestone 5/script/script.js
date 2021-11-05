@@ -289,14 +289,14 @@ new Vue({
                     this.contacts[this.index].messages.push(userMsg);
                 }, 1000);
         },
-        lastMsg: function ()
+        lastMsg()
         {
             let el = this.contacts[this.index].messages;
             let res = el.map(({ date }) => date);
             return res[res.length - 1];
         },
         // cercare un contatto - Filter
-        searchContact: function ()
+        searchContact()
         {
             this.contacts.forEach((el) =>
             {
@@ -327,6 +327,11 @@ new Vue({
         deleteMsg: function (i)
         {
             this.contacts[this.index].messages.splice(i, 1);
+        },
+        // funzione inoltra
+        inoltra: function (el)
+        {
+            return this.newMsg = el;
         }
     },
     updated()
